@@ -42,8 +42,8 @@ sysctl -p
 
 # Allow PPTP traffic on iptables
 iptables -t nat -A POSTROUTING -o eth0 -s 10.0.0.0/24 -j MASQUERADE
-# iptables -A FORWARD -p tcp --syn -j TCPMSS --set-mss 1356
-iptables -t nat -A POSTROUTING -j SNAT --to-source 45.32.63.250
+iptables -A FORWARD -p tcp --syn -j TCPMSS --set-mss 1356
+# iptables -t nat -A POSTROUTING -j SNAT --to-source 45.32.63.250
 
 
 # Save iptable
